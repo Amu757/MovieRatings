@@ -1,0 +1,163 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Global css */
+.sect-p {
+  padding: 30px;
+}
+.info-p {
+  padding-bottom: 10px;
+}
+.sect-m {
+  margin-bottom: 40px;
+}
+.headline-m {
+  margin: 8px 0;
+}
+.btn {
+  padding: 10px 20px;
+  background-color: #378ce7;
+  height: 50px;
+  border-radius: 13px;
+  color: white;
+  border: none;
+  font-size: 18px;
+}
+
+#homepage {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-bottom: 0px;
+}
+.detailspage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  min-height: 95vh;
+}
+.head {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.head > h1 {
+  font-size: 35px;
+}
+#home-table {
+  width: 100%;
+}
+#home-table th {
+  background-color: #378ce7;
+  font-size: 17px;
+  color: white;
+  padding: 15px 0;
+}
+#home-table tr {
+  height: 40px;
+  font-size: 18px;
+}
+#home-table tr td {
+  text-align: center;
+}
+#home-table tr td i {
+  font-size: 18px;
+  margin-left: 9px;
+}
+#home-table tr td i:hover {
+  transform: scale(1.1);
+}
+
+/* model css */
+#modeloverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#model {
+  height: 80vh;
+  width: 80vw;
+  margin-left: 5%;
+  position: relative;
+  background-color: white;
+  display: flex;
+}
+.left {
+  width: 35%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.left .image {
+  height: 85%;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+.left .image img {
+  height: 100%;
+}
+.left #generes {
+  width: 80%;
+  padding-top: 10px;
+  padding-left: 15%;
+  margin: 0 auto;
+  padding: auto;
+}
+
+.right {
+  padding-left: 10px;
+  width: 65%;
+  height: 95%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.right h1 {
+  font-size: 27px;
+}
+.right h4 {
+  font-size: 25px;
+}
+#model p {
+  font-size: 20px;
+}
+.right #closebtn {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  color: red;
+  font-size: 25px;
+}
+.right #closebtn:hover {
+  transform: scale(1.3);
+  transition: 0.25s;
+}
+.right .rating {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+.right .rating .box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}

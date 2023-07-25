@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Movie Rating</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- icons link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section id="homepage" class="sect-p">
+        <div class="detailspage">
+            <div class="head">
+                <h1>MOVIES</h1>
+                <button class="btn">Create New Movie</button>
+            </div>
+            <table id="home-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Release Date</th>
+                        <th>Generes</th>
+                        <th>Duration</th>
+                        <th>IMDB Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="table-title"></td>
+                        <td class="table-release"></td>
+                        <td class="table-generes"></td>
+                        <td class="table-duration"></td>
+                        <td class="table-IMDB"></td>
+                        <td class="table-actions"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="table-title"></td>
+                        <td class="table-release"></td>
+                        <td class="table-generes"></td>
+                        <td class="table-duration"></td>
+                        <td class="table-IMDB"></td>
+                        <td class="table-actions"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="table-title"></td>
+                        <td class="table-release"></td>
+                        <td class="table-generes"></td>
+                        <td class="table-duration"></td>
+                        <td class="table-IMDB"></td>
+                        <td class="table-actions"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="table-title"></td>
+                        <td class="table-release"></td>
+                        <td class="table-generes"></td>
+                        <td class="table-duration"></td>
+                        <td class="table-IMDB"></td>
+                        <td class="table-actions"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="table-title"></td>
+                        <td class="table-release"></td>
+                        <td class="table-generes"></td>
+                        <td class="table-duration"></td>
+                        <td class="table-IMDB"></td>
+                        <td class="table-actions"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td class="table-title"></td>
+                        <td class="table-release"></td>
+                        <td class="table-generes"></td>
+                        <td class="table-duration"></td>
+                        <td class="table-IMDB"></td>
+                        <td class="table-actions"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td class="table-title"></td>
+                        <td class="table-release"></td>
+                        <td class="table-generes"></td>
+                        <td class="table-duration"></td>
+                        <td class="table-IMDB"></td>
+                        <td class="table-actions"></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td class="table-title"></td>
+                        <td class="table-release"></td>
+                        <td class="table-generes"></td>
+                        <td class="table-duration"></td>
+                        <td class="table-IMDB"></td>
+                        <td class="table-actions"></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td class="table-title"></td>
+                        <td class="table-release"></td>
+                        <td class="table-generes"></td>
+                        <td class="table-duration"></td>
+                        <td class="table-IMDB"></td>
+                        <td class="table-actions"></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td class="table-title"></td>
+                        <td class="table-release"></td>
+                        <td class="table-generes"></td>
+                        <td class="table-duration"></td>
+                        <td class="table-IMDB"></td>
+                        <td class="table-actions"></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </section>
+
+
+    <section id="modeloverlay">
+        <div id="model" class="sect-p">
+            <div class="left">
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <p id="generes"></p>
+            </div>
+            <div class="right">
+                <i id="closebtn" onclick="closemodel()" class="fa-sharp fa-solid fa-circle-xmark"></i>
+
+                <h1 id="title" class="headline-m">Love story</h1>
+                <div>
+                    <h4 class="headline-m">StoryLine</h4>
+                    <p id="storyline" class="info-p">
+                    </p>
+                </div>
+                <div>
+                    <h4 class="headline-m">Actors</h4>
+                    <p id="actors" class="info-p"></p>
+                </div>
+                <div>
+                    <h4 id="release"></h4>
+                    <p id="??" class="info-p"></p>
+                </div>
+                <div>
+                    <h4 class="headline-m">Duration</h4>
+                    <p id="duration" class="info-p">blank</p>
+                </div>
+                <div>
+                    <h4 class="headline-m">Rating</h4>
+                    <div class="rating">
+                        <div class="box">
+                            <h4 class="headline-m">IMDB</h4>
+                            <p id="imdb" class="info-p"></p>
+                        </div>
+                        <div class="box">
+                            <h4 class="headline-m">Average</h4>
+                            <p id="average" class="info-p"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>

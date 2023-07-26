@@ -15,7 +15,7 @@
         <div class="detailspage">
             <div class="head">
                 <h1>MOVIES</h1>
-                <button class="btn">Create New Movie</button>
+                <button class="btn" onclick="showmodel('addmoviemodal')">Create New Movie</button>
             </div>
             <table id="home-table">
                 <thead>
@@ -127,8 +127,8 @@
     </section>
 
 
-    <section id="modeloverlay">
-        <div id="model" class="sect-p">
+    <section id="modeloverlay" class="modeloverlay">
+        <div id="model" class="model sect-p">
             <div class="left">
                 <div class="image">
                     <img src="" alt="">
@@ -136,9 +136,10 @@
                 <p id="generes"></p>
             </div>
             <div class="right">
-                <i id="closebtn" onclick="closemodel()" class="fa-sharp fa-solid fa-circle-xmark"></i>
+                <i id="closebtn" onclick="closemodel('modeloverlay')"
+                    class="fa-sharp fa-solid fa-circle-xmark closebtn"></i>
 
-                <h1 id="title" class="headline-m">Love story</h1>
+                <h1 id="title" class="headline-m"></h1>
                 <div>
                     <h4 class="headline-m">StoryLine</h4>
                     <p id="storyline" class="info-p">
@@ -170,6 +171,23 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="addmoviemodal" class="modeloverlay">
+        <div id="modal2" class="model">
+            <i onclick="closemodel('addmoviemodal')" class="fa-sharp fa-solid fa-circle-xmark closebtn"></i>
+            <form>
+                <input type="text" placeholder="Title" required>
+                <input type="text" placeholder="Generes" required>
+                <input type="text" placeholder="Actors" required>
+                <input type="text" placeholder="IMDB Rating" required>
+                <input type="text" placeholder="Duration" required>
+                <input type="text" id="formrelease" placeholder="Release Date" required onclick="datetype()">
+                <input type="url" placeholder="Poster URL" required>
+                <textarea type="text" rows="10" cols="30" maxlength="300" placeholder="StoryLine" required></textarea>
+                <button class="btn" style="margin: auto;">ADD MOVIE</button>
+            </form>
         </div>
     </section>
 

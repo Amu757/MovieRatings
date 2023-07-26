@@ -48,7 +48,7 @@ async function showtable() {
       icon.classList.add("fa-solid");
       icon.classList.add("fa-eye");
       icon.style.color = "#5454fb";
-      icon.addEventListener("click", showmodel);
+      icon.setAttribute("onclick", "showmodel('modeloverlay')");
       cellsInRow[6].appendChild(icon);
 
       icon = document.createElement("i");
@@ -76,57 +76,63 @@ async function showtable() {
 showtable(); // calling after page load
 
 // icons onclick functions
-function showmodel() {
-  document.getElementById("modeloverlay").style.display = "flex";
-
-  // loading model data with user click
-  bodyrows.forEach((row, index) => {
-    row.addEventListener("click", () => {
-      const img = document.querySelector(".image img");
-      img.src = database[index].posterurl;
-
-      const title = document.getElementById("title");
-      const storyline = document.getElementById("storyline");
-      const actors = document.getElementById("actors");
-      const release = document.getElementById("release");
-      const generes = document.getElementById("generes");
-      generes.innerHTML = ""; // if enters second time 1st step is to clean previous
-
-      database[index].genres.forEach((item, index) => {
-        generes.innerHTML += item + " | ";
-      });
-
-      const duration = document.getElementById("duration");
-      const imdb = document.getElementById("imdb");
-      const average = document.getElementById("average");
-
-      title.innerHTML = database[index].title;
-      storyline.innerHTML = database[index].storyline;
-      actors.innerHTML = ""; // if enters second time 1st step is to clean previous
-
-      database[index].actors.forEach((item, index) => {
-        actors.innerHTML += item + " | ";
-      });
-
-      release.innerHTML = database[index].releaseDate;
-      // title.innerHTML = database[index].title;
-      duration.innerHTML = database[index].duration;
-      imdb.innerHTML = database[index].imdbRating;
-
-      let sum = 0;
-      database[index].ratings.forEach((item, index) => {
-        sum += item;
-      });
-      average.innerHTML = sum;
-    });
-  });
+function showmodel(modalid) {
+  document.getElementById(modalid).style.display = "flex";
 }
+
+// loading model data with user click
+bodyrows.forEach((row, index) => {
+  row.addEventListener("click", () => {
+    const img = document.querySelector(".image img");
+    img.src = database[index].posterurl;
+
+    const title = document.getElementById("title");
+    const storyline = document.getElementById("storyline");
+    const actors = document.getElementById("actors");
+    const release = document.getElementById("release");
+    const generes = document.getElementById("generes");
+    generes.innerHTML = ""; // if enters second time 1st step is to clean previous
+
+    database[index].genres.forEach((item, index) => {
+      generes.innerHTML += item + " | ";
+    });
+
+    const duration = document.getElementById("duration");
+    const imdb = document.getElementById("imdb");
+    const average = document.getElementById("average");
+
+    title.innerHTML = database[index].title;
+    storyline.innerHTML = database[index].storyline;
+    actors.innerHTML = ""; // if enters second time 1st step is to clean previous
+
+    database[index].actors.forEach((item, index) => {
+      actors.innerHTML += item + " | ";
+    });
+
+    release.innerHTML = database[index].releaseDate;
+    // title.innerHTML = database[index].title;
+    duration.innerHTML = database[index].duration;
+    imdb.innerHTML = database[index].imdbRating;
+
+    let sum = 0;
+    database[index].ratings.forEach((item, index) => {
+      sum += item;
+    });
+    average.innerHTML = sum;
+  });
+});
+
 const Editmovie = () => {
   console.log("nyet to complete the logic");
 };
 const Deletemovie = () => {
   console.log("nyet to complete the logic");
 };
-const closemodel = () => {
-  document.getElementById("modeloverlay").style.display = "none";
+const closemodel = (modalid) => {
+  document.getElementById(modalid).style.display = "none";
 };
+
+// changes input type of date field
+function datetype() {
+  document.getElementById("formrelease").type = "date";
+}

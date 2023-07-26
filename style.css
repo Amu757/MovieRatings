@@ -75,7 +75,7 @@
 }
 
 /* model css */
-#modeloverlay {
+.modeloverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -87,7 +87,7 @@
   align-items: center;
 }
 
-#model {
+.model {
   height: 80vh;
   width: 80vw;
   margin-left: 5%;
@@ -140,7 +140,7 @@
 #model p {
   font-size: 20px;
 }
-.right #closebtn {
+.closebtn {
   position: absolute;
   right: -8px;
   top: -8px;
@@ -160,4 +160,32 @@
   display: flex;
   flex-direction: column;
   row-gap: 5px;
+}
+
+/* add movie modal */
+#modal2 form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 30px;
+  padding: 20px;
+}
+#modal2 form input {
+  width: 49%;
+  height: 50px;
+  padding: 5px 10px;
+  outline: none;
+  font-family: "Segoe UI";
+  font-size: 19px;
+}
+#modal2 form input:nth-child(7) {
+  width: 100%;
+}
+
+#modal2 form textarea {
+  width: 100%;
+  padding: 5px 10px;
+  outline: none;
+  font-family: "Segoe UI";
+  font-size: 19px;
 }

@@ -42,7 +42,7 @@
   min-height: 95vh;
 }
 .head {
-  height: 15vh;
+  height: 10vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -188,4 +188,40 @@
   outline: none;
   font-family: "Segoe UI";
   font-size: 19px;
+}
+
+.paginationIcons {
+  width: 80vw;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 20px;
+}
+.paginationIcons div {
+  height: 40px;
+}
+.paginationIcons div i {
+  height: 100%;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #378ce7;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  font-size: 18px;
+}
+.slideicons {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 150px;
+}
+.numbers {
+  display: flex;
+  justify-content: space-around;
+  width: 50px;
+  font-size: 22px;
 }

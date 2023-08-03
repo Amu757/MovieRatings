@@ -5,17 +5,17 @@
     <title>Movie Rating</title>
     <link rel="stylesheet" href="style.css">
     <!-- icons link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Header -->
     <section id="homepage" class="sect-p">
         <div class="detailspage">
             <div class="head">
                 <h1>MOVIES</h1>
-                <button class="btn" onclick="showmodel('addmoviemodal')">Create New Movie</button>
+                <button class="btn" onclick="showmodel('addmoviemodal'), changeaction()">Create New
+                    Movie</button>
             </div>
             <table id="home-table">
                 <thead>
@@ -29,104 +29,24 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td class="table-title"></td>
-                        <td class="table-release"></td>
-                        <td class="table-generes"></td>
-                        <td class="table-duration"></td>
-                        <td class="table-IMDB"></td>
-                        <td class="table-actions"></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td class="table-title"></td>
-                        <td class="table-release"></td>
-                        <td class="table-generes"></td>
-                        <td class="table-duration"></td>
-                        <td class="table-IMDB"></td>
-                        <td class="table-actions"></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td class="table-title"></td>
-                        <td class="table-release"></td>
-                        <td class="table-generes"></td>
-                        <td class="table-duration"></td>
-                        <td class="table-IMDB"></td>
-                        <td class="table-actions"></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td class="table-title"></td>
-                        <td class="table-release"></td>
-                        <td class="table-generes"></td>
-                        <td class="table-duration"></td>
-                        <td class="table-IMDB"></td>
-                        <td class="table-actions"></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td class="table-title"></td>
-                        <td class="table-release"></td>
-                        <td class="table-generes"></td>
-                        <td class="table-duration"></td>
-                        <td class="table-IMDB"></td>
-                        <td class="table-actions"></td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td class="table-title"></td>
-                        <td class="table-release"></td>
-                        <td class="table-generes"></td>
-                        <td class="table-duration"></td>
-                        <td class="table-IMDB"></td>
-                        <td class="table-actions"></td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td class="table-title"></td>
-                        <td class="table-release"></td>
-                        <td class="table-generes"></td>
-                        <td class="table-duration"></td>
-                        <td class="table-IMDB"></td>
-                        <td class="table-actions"></td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td class="table-title"></td>
-                        <td class="table-release"></td>
-                        <td class="table-generes"></td>
-                        <td class="table-duration"></td>
-                        <td class="table-IMDB"></td>
-                        <td class="table-actions"></td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td class="table-title"></td>
-                        <td class="table-release"></td>
-                        <td class="table-generes"></td>
-                        <td class="table-duration"></td>
-                        <td class="table-IMDB"></td>
-                        <td class="table-actions"></td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td class="table-title"></td>
-                        <td class="table-release"></td>
-                        <td class="table-generes"></td>
-                        <td class="table-duration"></td>
-                        <td class="table-IMDB"></td>
-                        <td class="table-actions"></td>
-                    </tr>
-                </tbody>
+                <tbody id="tablebody">
 
+                </tbody>
             </table>
+            <div class="paginationIcons">
+                <div class="slideicons">
+                    <i class="fa-solid fa-arrow-left" onclick="prevPage()"></i>
+                    <i class="fa-solid fa-arrow-right" onclick="nextPage()"></i>
+                </div>
+                <div class="numbers">
+                    <span id="currentpage"></span>/
+                    <span id="totalpage"></span>
+                </div>
+
+            </div>
         </div>
     </section>
-
-
+    <!-- show movie information -->
     <section id="modeloverlay" class="modeloverlay">
         <div id="model" class="model sect-p">
             <div class="left">
@@ -173,25 +93,27 @@
             </div>
         </div>
     </section>
-
+    <!-- Create new movie && add old movie  -->
     <section id="addmoviemodal" class="modeloverlay">
         <div id="modal2" class="model">
             <i onclick="closemodel('addmoviemodal')" class="fa-sharp fa-solid fa-circle-xmark closebtn"></i>
-            <form>
-                <input type="text" placeholder="Title" required>
-                <input type="text" placeholder="Generes" required>
-                <input type="text" placeholder="Actors" required>
-                <input type="text" placeholder="IMDB Rating" required>
-                <input type="text" placeholder="Duration" required>
-                <input type="text" id="formrelease" placeholder="Release Date" required onclick="datetype()">
-                <input type="url" placeholder="Poster URL" required>
-                <textarea type="text" rows="10" cols="30" maxlength="300" placeholder="StoryLine" required></textarea>
-                <button class="btn" style="margin: auto;">ADD MOVIE</button>
+            <form id="addmovieform">
+                <input id="inputTitle" type="text" placeholder="Title" required>
+                <input id="inputGeneres" type="text" placeholder="Generes" required>
+                <input id="inputActors" type="text" placeholder="Actors" required>
+                <input id="inputImdb" type="text" placeholder="IMDB Rating" required>
+                <input id="inputDuration" type="text" placeholder="Duration" required>
+                <input id="formrelease" type="text" placeholder="Release Date" required onfocus="datetype()">
+                <input id="inputUrl" type="url" placeholder="Poster URL" required>
+                <textarea id="inputStoryline" type="text" rows="10" cols="30" maxlength="300" placeholder="StoryLine"
+                    required></textarea>
+                <button class="btn" style="margin: auto;" onclick="createMovie()">ADD MOVIE</button>
             </form>
         </div>
     </section>
 
-    <script src="./script/script.js"></script>
+    <script src="./script/script2.js"></script>
+
 </body>
 
 </html>
